@@ -6,35 +6,36 @@ defmodule MFPBWeb.IndexLive do
   @impl true
   def render(assigns) do
     ~H"""
-    <div class="row">
-      <div class="column column-center text-center">
-        <h1>mfpb</h1>
-        <button class="button mg" phx-click="create" phx-throttle="1000">Create new bin</button>
+    <header class="py-8 bg-stone-800">
+      <div class="text-center">
+        <h1 class="text-5xl tracking-wide text-stone-50">mfpb</h1>
       </div>
-    </div>
-    <div class="row">
-      <div class="column">
-        <h2>About</h2>
-        <p>
+    </header>
+    <main class="container">
+      <section class="text-center">
+        <button class="font-bold my-8 px-8 py-3 border-2 border-stone-800 hover:bg-stone-800 hover:text-stone-50 rounded-xl text-xl transition-colors" phx-click="create" phx-throttle="1000">Create new bin</button>
+      </section>
+      <section class="max-w-prose mx-auto leading-relaxed text-lg">
+        <p class="mb-3">
           <b>mfpb</b> is a simple tool used to inspect HTTP requests.
         </p>
-        <p>
+        <p class="mb-3">
           It tries not to get in your way, it doesn't parse the body or do other
           fancy stuff with your request. This way you see exactly what was sent.
           The idea is basically having the same output you would get by doing HTTP
-          requests to a listening instance of <code>netcat</code>.
+          requests to a listening instance of <code class="bg-neutral-200 px-1 ml-1">netcat</code>.
         </p>
-        <p>
+        <p class="mb-3">
           Under the hood it uses the super cool
           <a target="_blank" href="https://github.com/phoenixframework/phoenix_live_view">Phoenix Live View</a>,
           so new requests are prepended at the top of the page without the need of
           refreshing.
         </p>
-        <p>
+        <p class="mb-3">
           You can find the source <a target="_blank" href="https://github.com/rbino/mfpb">on Github</a>.
         </p>
-      </div>
-    </div>
+      </section>
+    </main>
     """
   end
 
